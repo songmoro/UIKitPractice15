@@ -13,7 +13,5 @@ class UpDownGameBottomViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(#function, #fileID)
-        
-        view.border()
     }
 }

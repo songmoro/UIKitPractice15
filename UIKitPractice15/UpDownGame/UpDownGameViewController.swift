@@ -16,6 +16,8 @@ class UpDownGameViewController: UIViewController {
         super.viewDidLoad()
         print(#function, #fileID)
         
+//        view.border()
+        
         configureView()
         configureContainerView()
     }

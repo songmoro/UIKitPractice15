@@ -17,16 +17,19 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKu-Yb-tHb" userLabel="Top Container View">
-                                <rect key="frame" x="0.0" y="118" width="393" height="127.66666666666669"/>
+                                <rect key="frame" x="0.0" y="118" width="393" height="128"/>
                                 <connections>
                                     <segue destination="lQS-uU-rtU" kind="embed" id="UDV-jY-JDU"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6D-pP-Fks" userLabel="Content Container View">
-                                <rect key="frame" x="0.0" y="245.66666666666663" width="393" height="453"/>
+                                <rect key="frame" x="0.0" y="246" width="393" height="453"/>
+                                <connections>
+                                    <segue destination="Q3F-7B-GC2" kind="embed" id="FCy-xm-k48"/>
+                                </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYn-JN-UIv" userLabel="Bottom Container View">
-                                <rect key="frame" x="0.0" y="698.66666666666663" width="393" height="85.333333333333371"/>
+                                <rect key="frame" x="0.0" y="699" width="393" height="85"/>
                                 <connections>
                                     <segue destination="wKF-yg-nXJ" kind="embed" id="HdP-Tt-Fh3"/>
                                 </connections>
@@ -65,7 +68,7 @@
             <objects>
                 <viewController id="lQS-uU-rtU" customClass="UpDownGameTopViewController" customModule="UIKitPractice15" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YgI-dW-P3Z">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="127.66666666666667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zt-N7-7Iq">
@@ -124,31 +127,62 @@
             </objects>
             <point key="canvasLocation" x="968.70229007633588" y="-350"/>
         </scene>
-        <!--View Controller-->
+        <!--Up Down Game Content View Controller-->
         <scene sceneID="sSG-Sw-QkY">
             <objects>
-                <viewController id="Q3F-7B-GC2" sceneMemberID="viewController">
+                <viewController id="Q3F-7B-GC2" customClass="UpDownGameContentViewController" customModule="UIKitPractice15" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qNN-oe-4Po">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="453"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="300" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uB1-Lg-7Wk">
+                                <rect key="frame" x="78.666666666666671" y="420" width="235.66666666666663" height="33"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="26"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="UpDownGame/emotion1" translatesAutoresizingMaskIntoConstraints="NO" id="5Wt-dm-fXm">
+                                <rect key="frame" x="60.666666666666657" y="0.0" width="271.66666666666674" height="362.33333333333331"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5Wt-dm-fXm" secondAttribute="height" multiplier="3:4" id="lbF-aU-MiE"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZt-Fj-B2F">
+                                <rect key="frame" x="78.666666666666671" y="452" width="235.66666666666663" height="1"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="aQh-9y-hTT"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="4If-l9-HDT"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uB1-Lg-7Wk" firstAttribute="centerX" secondItem="4If-l9-HDT" secondAttribute="centerX" id="23I-eR-W6E"/>
+                            <constraint firstItem="5Wt-dm-fXm" firstAttribute="height" secondItem="qNN-oe-4Po" secondAttribute="height" multiplier="0.8" id="EOQ-vx-Sga"/>
+                            <constraint firstItem="iZt-Fj-B2F" firstAttribute="bottom" secondItem="uB1-Lg-7Wk" secondAttribute="bottom" id="Jn2-rg-SAd"/>
+                            <constraint firstItem="iZt-Fj-B2F" firstAttribute="centerX" secondItem="uB1-Lg-7Wk" secondAttribute="centerX" id="N5o-NC-1bC"/>
+                            <constraint firstItem="5Wt-dm-fXm" firstAttribute="centerX" secondItem="4If-l9-HDT" secondAttribute="centerX" id="Uj1-W0-9mK"/>
+                            <constraint firstItem="iZt-Fj-B2F" firstAttribute="width" secondItem="uB1-Lg-7Wk" secondAttribute="width" id="cgm-Jw-LpR"/>
+                            <constraint firstAttribute="bottom" secondItem="uB1-Lg-7Wk" secondAttribute="bottom" id="qIS-Mo-6gJ"/>
+                            <constraint firstItem="5Wt-dm-fXm" firstAttribute="top" secondItem="qNN-oe-4Po" secondAttribute="top" id="t5j-ZI-riP"/>
+                            <constraint firstItem="uB1-Lg-7Wk" firstAttribute="width" secondItem="qNN-oe-4Po" secondAttribute="width" multiplier="0.6" id="yoy-09-6dA"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BNP-3f-WTB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1842" y="187"/>
+            <point key="canvasLocation" x="968.70229007633588" y="20.774647887323944"/>
         </scene>
         <!--Up Down Game Bottom View Controller-->
         <scene sceneID="Jz1-0X-rsf">
             <objects>
                 <viewController id="wKF-yg-nXJ" customClass="UpDownGameBottomViewController" customModule="UIKitPractice15" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t43-q0-POH">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="85.333333333333329"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="85"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sot-YT-e4k">
-                                <rect key="frame" x="39.333333333333343" y="-8.3333333333333321" width="314.33333333333326" height="59.666666666666657"/>
+                                <rect key="frame" x="39.333333333333343" y="-8.6666666666666679" width="314.33333333333326" height="59.666666666666671"/>
                                 <color key="backgroundColor" systemColor="labelColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -175,6 +209,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="UpDownGame/emotion1" width="327" height="360"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
