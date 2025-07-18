@@ -8,28 +8,28 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Up Down Game View Controller-->
+        <!--Up Down View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="UpDownGameViewController" customModule="UIKitPractice15" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="UpDownViewController" customModule="UIKitPractice15" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1FZ-hQ-J8l">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKu-Yb-tHb" userLabel="Top Container View">
-                                <rect key="frame" x="0.0" y="118" width="393" height="128"/>
+                                <rect key="frame" x="0.0" y="118" width="393" height="127.66666666666669"/>
                                 <connections>
                                     <segue destination="lQS-uU-rtU" kind="embed" id="UDV-jY-JDU"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6D-pP-Fks" userLabel="Content Container View">
-                                <rect key="frame" x="0.0" y="246" width="393" height="453"/>
+                                <rect key="frame" x="0.0" y="245.66666666666663" width="393" height="453"/>
                                 <connections>
                                     <segue destination="Q3F-7B-GC2" kind="embed" id="FCy-xm-k48"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYn-JN-UIv" userLabel="Bottom Container View">
-                                <rect key="frame" x="0.0" y="699" width="393" height="85"/>
+                                <rect key="frame" x="0.0" y="698.66666666666663" width="393" height="85.333333333333371"/>
                                 <connections>
                                     <segue destination="wKF-yg-nXJ" kind="embed" id="HdP-Tt-Fh3"/>
                                 </connections>
@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="76" y="-2"/>
         </scene>
-        <!--Up Down Game Top View Controller-->
+        <!--Up Down Top View Controller-->
         <scene sceneID="L5L-tk-okh">
             <objects>
-                <viewController id="lQS-uU-rtU" customClass="UpDownGameTopViewController" customModule="UIKitPractice15" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lQS-uU-rtU" customClass="UpDownTopViewController" customModule="UIKitPractice15" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YgI-dW-P3Z">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="128"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,10 +127,10 @@
             </objects>
             <point key="canvasLocation" x="968.70229007633588" y="-350"/>
         </scene>
-        <!--Up Down Game Content View Controller-->
+        <!--Up Down Content View Controller-->
         <scene sceneID="sSG-Sw-QkY">
             <objects>
-                <viewController id="Q3F-7B-GC2" customClass="UpDownGameContentViewController" customModule="UIKitPractice15" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Q3F-7B-GC2" customClass="UpDownContentViewController" customModule="UIKitPractice15" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qNN-oe-4Po">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="453"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -173,10 +173,10 @@
             </objects>
             <point key="canvasLocation" x="968.70229007633588" y="20.774647887323944"/>
         </scene>
-        <!--Up Down Game Bottom View Controller-->
+        <!--Up Down Bottom View Controller-->
         <scene sceneID="Jz1-0X-rsf">
             <objects>
-                <viewController id="wKF-yg-nXJ" customClass="UpDownGameBottomViewController" customModule="UIKitPractice15" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wKF-yg-nXJ" customClass="UpDownBottomViewController" customModule="UIKitPractice15" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t43-q0-POH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="85"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -186,7 +186,7 @@
                                 <color key="backgroundColor" systemColor="labelColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button">
+                                <buttonConfiguration key="configuration" style="plain" title="시작하기">
                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="17"/>
                                 </buttonConfiguration>
                             </button>

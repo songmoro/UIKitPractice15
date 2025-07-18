@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--UpDownGame-->
+        <!--UpDown-->
         <scene sceneID="bJq-Ct-rAy">
             <objects>
-                <viewControllerPlaceholder storyboardName="UpDownGame" id="Hgb-AC-rzg" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="UpDown" id="Hgb-AC-rzg" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Tl0-v4-gL9"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ldz-rO-aye" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

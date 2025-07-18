@@ -1,5 +1,5 @@
 //
-//  UpDownGameViewController.swift
+//  UpDownViewController.swift
 //  UIKitPractice15
 //
 //  Created by 송재훈 on 7/18/25.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UpDownGameViewController: UIViewController {
+class UpDownViewController: UIViewController {
     @IBOutlet var topContainverView: UIView!
     @IBOutlet var contentContainerView: UIView!
     @IBOutlet var bottomContainerView: UIView!
@@ -33,7 +33,7 @@ class UpDownGameViewController: UIViewController {
     }
     
     private func configureTopContainerView() {
-        guard let topVC = children.first(where: { $0 is UpDownGameTopViewController }) as? UpDownGameTopViewController else { return }
+        guard let topVC = children.first(where: { $0 is UpDownTopViewController }) as? UpDownTopViewController else { return }
         
         print(topVC)
 

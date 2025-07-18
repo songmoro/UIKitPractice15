@@ -1,5 +1,5 @@
 //
-//  UpDownGameBottomViewController.swift
+//  UpDownBottomViewController.swift
 //  UIKitPractice15
 //
 //  Created by 송재훈 on 7/18/25.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UpDownGameBottomViewController: UIViewController {
+class UpDownBottomViewController: UIViewController {
     @IBOutlet var gameButton: UIButton!
     
     override func viewDidLoad() {
