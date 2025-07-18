@@ -34,8 +34,6 @@ class UpDownViewController: UIViewController {
     
     private func configureTopContainerView() {
         guard let topVC = children.first(where: { $0 is UpDownTopViewController }) as? UpDownTopViewController else { return }
-        
-        print(topVC)
 
         
 //        컨테이너 뷰 컨트롤러의 addChild(_:) 메서드를 호출하여 컨테이너 관계를 구성합니다.
