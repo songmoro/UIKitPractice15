@@ -1,0 +1,20 @@
+//
+//  UpDownGameTopViewController.swift
+//  UIKitPractice15
+//
+//  Created by 송재훈 on 7/18/25.
+//
+
+import UIKit
+
+class UpDownGameTopViewController: UIViewController {
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var descriptionLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print(#function, #fileID)
+        
+        view.border()
+    }
+}
