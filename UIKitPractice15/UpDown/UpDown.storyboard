@@ -25,7 +25,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6D-pP-Fks" userLabel="Content Container View">
                                 <rect key="frame" x="0.0" y="245.66666666666663" width="393" height="453"/>
                                 <connections>
-                                    <segue destination="Q3F-7B-GC2" kind="embed" id="FCy-xm-k48"/>
+                                    <segue destination="ocD-qK-NlG" kind="embed" id="4Oo-eM-GiC"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYn-JN-UIv" userLabel="Bottom Container View">
@@ -63,12 +63,26 @@
             </objects>
             <point key="canvasLocation" x="76" y="-2"/>
         </scene>
+        <!--Up Down Content View Controller-->
+        <scene sceneID="CEV-Rw-6IR">
+            <objects>
+                <viewController id="ocD-qK-NlG" customClass="UpDownContentViewController" customModule="UIKitPractice15" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hDA-yq-Tlg">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="453"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="w7p-pf-Pqe"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YdK-c0-ljw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="859" y="122"/>
+        </scene>
         <!--Up Down Top View Controller-->
         <scene sceneID="L5L-tk-okh">
             <objects>
                 <viewController id="lQS-uU-rtU" customClass="UpDownTopViewController" customModule="UIKitPractice15" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YgI-dW-P3Z">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="127.66666666666667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zt-N7-7Iq">
@@ -132,28 +146,28 @@
             <objects>
                 <viewController id="Q3F-7B-GC2" customClass="UpDownContentViewController" customModule="UIKitPractice15" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qNN-oe-4Po">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="453"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="300" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uB1-Lg-7Wk">
-                                <rect key="frame" x="78.666666666666671" y="420" width="235.66666666666663" height="33"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="26"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="UpDownGame/emotion1" translatesAutoresizingMaskIntoConstraints="NO" id="5Wt-dm-fXm">
-                                <rect key="frame" x="60.666666666666657" y="0.0" width="271.66666666666674" height="362.33333333333331"/>
+                                <rect key="frame" x="-59" y="0.0" width="511" height="681.66666666666663"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="5Wt-dm-fXm" secondAttribute="height" multiplier="3:4" id="lbF-aU-MiE"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZt-Fj-B2F">
-                                <rect key="frame" x="78.666666666666671" y="452" width="235.66666666666663" height="1"/>
+                                <rect key="frame" x="78.666666666666671" y="851" width="235.66666666666663" height="1"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="aQh-9y-hTT"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="300" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uB1-Lg-7Wk">
+                                <rect key="frame" x="78.666666666666671" y="819" width="235.66666666666663" height="33"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="26"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4If-l9-HDT"/>
                         <constraints>
@@ -171,18 +185,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BNP-3f-WTB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="968.70229007633588" y="20.774647887323944"/>
+            <point key="canvasLocation" x="1711" y="36"/>
         </scene>
         <!--Up Down Bottom View Controller-->
         <scene sceneID="Jz1-0X-rsf">
             <objects>
                 <viewController id="wKF-yg-nXJ" customClass="UpDownBottomViewController" customModule="UIKitPractice15" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t43-q0-POH">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="85"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="85.333333333333329"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sot-YT-e4k">
-                                <rect key="frame" x="39.333333333333343" y="-8.6666666666666679" width="314.33333333333326" height="59.666666666666671"/>
+                                <rect key="frame" x="39.333333333333343" y="-8.3333333333333321" width="314.33333333333326" height="59.666666666666657"/>
                                 <color key="backgroundColor" systemColor="labelColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>

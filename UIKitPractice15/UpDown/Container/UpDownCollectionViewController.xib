@@ -15,10 +15,10 @@
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="b2U-N8-JOE">
-                        <rect key="frame" x="0.0" y="229.66666666666663" width="393" height="393"/>
+                        <rect key="frame" x="0.0" y="268.66666666666663" width="393" height="314.66666666666663"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="b2U-N8-JOE" secondAttribute="height" multiplier="1:1" id="GZ9-Tv-uFk"/>
+                            <constraint firstAttribute="width" secondItem="b2U-N8-JOE" secondAttribute="height" multiplier="1:0.8" id="GZ9-Tv-uFk"/>
                         </constraints>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dCY-8a-QWH">
                             <size key="itemSize" width="128" height="128"/>

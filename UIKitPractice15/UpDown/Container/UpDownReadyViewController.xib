@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <viewController id="KLJ-Km-lhM" customClass="UpDownReadyViewController" customModule="UIKitPractice15" customModuleProvider="target">
+            <view key="view" contentMode="scaleToFill" id="Vt7-yu-y2e">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="UpDownGame/emotion1" translatesAutoresizingMaskIntoConstraints="NO" id="HX9-UI-GCl">
+                        <rect key="frame" x="33" y="118" width="327" height="436"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="HX9-UI-GCl" secondAttribute="height" multiplier="3:4" id="jIY-Zy-fs0"/>
+                        </constraints>
+                    </imageView>
+                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="300" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TFp-3F-u8n">
+                        <rect key="frame" x="78.666666666666671" y="751" width="235.66666666666663" height="33"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="26"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iPO-mz-WXQ">
+                        <rect key="frame" x="78.666666666666671" y="783" width="235.66666666666663" height="1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="You-AH-w8u"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <viewLayoutGuide key="safeArea" id="Ne4-NP-b0v"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="iPO-mz-WXQ" firstAttribute="width" secondItem="TFp-3F-u8n" secondAttribute="width" id="0FY-kc-bNl"/>
+                    <constraint firstItem="HX9-UI-GCl" firstAttribute="top" secondItem="Ne4-NP-b0v" secondAttribute="top" id="5MN-YH-JC3"/>
+                    <constraint firstItem="iPO-mz-WXQ" firstAttribute="centerX" secondItem="TFp-3F-u8n" secondAttribute="centerX" id="FnQ-l4-hex"/>
+                    <constraint firstItem="TFp-3F-u8n" firstAttribute="width" secondItem="Vt7-yu-y2e" secondAttribute="width" multiplier="0.6" id="Ltb-kb-IZH"/>
+                    <constraint firstItem="iPO-mz-WXQ" firstAttribute="bottom" secondItem="TFp-3F-u8n" secondAttribute="bottom" id="arx-C3-iFe"/>
+                    <constraint firstItem="HX9-UI-GCl" firstAttribute="centerX" secondItem="Vt7-yu-y2e" secondAttribute="centerX" id="d7L-AV-cG2"/>
+                    <constraint firstItem="TFp-3F-u8n" firstAttribute="centerX" secondItem="Vt7-yu-y2e" secondAttribute="centerX" id="ffX-Mv-yKc"/>
+                    <constraint firstItem="Ne4-NP-b0v" firstAttribute="bottom" secondItem="TFp-3F-u8n" secondAttribute="bottom" id="x86-da-N8B"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="limitNumberTextField" destination="TFp-3F-u8n" id="GMc-az-6SL"/>
+            </connections>
+            <point key="canvasLocation" x="1924.4274809160304" y="117.60563380281691"/>
+        </viewController>
+    </objects>
+    <resources>
+        <image name="UpDownGame/emotion1" width="327" height="360"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

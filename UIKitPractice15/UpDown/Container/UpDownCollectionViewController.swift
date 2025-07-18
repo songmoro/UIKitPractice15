@@ -14,18 +14,23 @@ class UpDownCollectionViewController: UIViewController, UICollectionViewDelegate
         super.viewDidLoad()
         print(#function, #fileID)
         
+        configureCollectionView()
+    }
+    
+    private func configureCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(UINib(nibName: "UpDownCell", bundle: nil), forCellWithReuseIdentifier: "UpDownCell")
         
         let layout = UICollectionViewFlowLayout()
-        let screen = UIScreen.main.bounds
+        let height = collectionView.bounds.height
         
-        let horizontalSpacing = screen.width * 0.05
-        let itemSpacing = screen.width * 0.05
+        // TODO: 분리
+        let horizontalSpacing = height * 0.05
+        let itemSpacing = height * 0.05
         let numberOfItems = 5.0
         let numberOfInsets = numberOfItems - 1
-        let totalItemSize = (screen.width - (horizontalSpacing + horizontalSpacing) - (itemSpacing * numberOfInsets))
+        let totalItemSize = (height - (horizontalSpacing + horizontalSpacing) - (itemSpacing * numberOfInsets))
         let itemSize = totalItemSize / numberOfItems
         
         layout.scrollDirection = .horizontal
@@ -43,7 +48,8 @@ class UpDownCollectionViewController: UIViewController, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UpDownCell", for: indexPath)
-        (cell as? UpDownCell)?.numberLabel.text = "\(indexPath.item)"
+        let itemNumber = indexPath.item + 1
+        (cell as? UpDownCell)?.numberLabel.text = "\(itemNumber)"
         
         return cell
     }
