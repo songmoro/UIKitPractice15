@@ -19,4 +19,8 @@ class UpDownCell: UICollectionViewCell {
         self.numberLabel.textColor = .label
         self.numberLabel.backgroundColor = .systemBackground
     }
+    
+    func configureView() {
+        layer.cornerRadius = self.bounds.height / 2
+    }
 }

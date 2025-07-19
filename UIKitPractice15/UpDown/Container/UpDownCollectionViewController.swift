@@ -57,6 +57,7 @@ extension UpDownCollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UpDownCell", for: indexPath)
         let itemNumber = items[indexPath.item]
         (cell as? UpDownCell)?.numberLabel.text = "\(itemNumber)"
+        (cell as? UpDownCell)?.configureView()
         
         return cell
     }
