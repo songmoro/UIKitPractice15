@@ -46,34 +46,48 @@ class UpDownViewController: UIViewController {
         configureContentContainerView()
         configureBottomContainerView()
     }
-    
+}
+
+// MARK: Top
+extension UpDownViewController {
     private func configureTopContainerView() {
         guard let vc = children.first(where: { $0 is UpDownTopViewController }) as? UpDownTopViewController else { return }
         topVC = vc
-        
-//        컨테이너 뷰 컨트롤러의 addChild(_:) 메서드를 호출하여 컨테이너 관계를 구성합니다.
-//        자식의 루트 뷰를 컨테이너의 뷰 계층에 추가합니다.
-//        하위 루트 뷰의 크기와 위치를 설정하기 위해 제약 조건을 추가합니다.
-//        vc.didMove(toParent: self)
     }
-    
+}
+
+// MARK: Content
+extension UpDownViewController {
     private func configureContentContainerView() {
         guard let vc = children.first(where: { $0 is UpDownContentViewController }) as? UpDownContentViewController else { return }
         contentVC = vc
     }
-    
+}
+
+// MARK: Bottom
+extension UpDownViewController {
     private func configureBottomContainerView() {
         guard let vc = children.first(where: { $0 is UpDownBottomViewController }) as? UpDownBottomViewController else { return }
+        vc.gameButton.addTarget(self, action: #selector(bottomContainerButtonTapped), for: .touchUpInside)
         bottomVC = vc
     }
     
-    func receiveFromChild(_ sender: Any) {
-        guard let senderWithData = sender as? WithData else { return }
-        
-        switch senderWithData.data {
-        case .start:
+    @objc func bottomContainerButtonTapped(_ sender: UIButton) {
+        print(#function)
+        switch state {
+        case .ready:
             state = .inprogress
-            contentVC?.receiveFromParent(senderWithData)
+            contentVC?.prepareInprogress()
+        case .inprogress:
+            if contentVC?.compareSelectedNumber() == true {
+                state = .end
+                contentVC?.prepareEnd()
+            }
+            else {
+                // tryCount += 1
+            }
+        case .end:
+            break
         }
     }
 }

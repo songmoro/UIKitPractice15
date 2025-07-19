@@ -17,8 +17,41 @@ class UpDownContentViewController: UIViewController {
         
         addReadyView()
     }
+}
+
+// MARK: ready
+extension UpDownContentViewController {
+    func prepareInprogress() {
+        removeReadyView()
+        addCollectionView()
+        
+        guard let text = readyViewController.limitNumberTextField.text, let number = Int(text) else { return }
+        // TODO: move to collectionVC
+        let range = Array(1...number)
+        collectionViewController.items = range
+        collectionViewController.answer = range.randomElement()!
+    }
+}
+
+// MARK: inprogress
+extension UpDownContentViewController {
+    func prepareEnd() {
+        removeCollectionView()
+    }
     
-    func addReadyView() {
+    func compareSelectedNumber() -> Bool {
+        return collectionViewController.compareNumber()
+    }
+}
+
+// MARK: end
+extension UpDownContentViewController {
+    
+}
+
+// MARK: prepare
+extension UpDownContentViewController {
+    private func addReadyView() {
         guard let vc = Bundle.main.loadNibNamed("UpDownReadyViewController", owner: nil)?.first as? UpDownReadyViewController else { return }
         
         addChild(vc)
@@ -29,7 +62,7 @@ class UpDownContentViewController: UIViewController {
         self.readyViewController = vc
     }
     
-    func addCollectionView() {
+    private func addCollectionView() {
         guard let vc = Bundle.main.loadNibNamed("UpDownCollectionViewController", owner: nil)?.first as? UpDownCollectionViewController else { return }
         
         addChild(vc)
@@ -40,23 +73,15 @@ class UpDownContentViewController: UIViewController {
         self.collectionViewController = vc
     }
     
-    func removeReadyView() {
+    private func removeReadyView() {
         readyViewController.willMove(toParent: nil)
         readyViewController.view.removeFromSuperview()
         readyViewController.removeFromParent()
     }
     
-    func removeCollectionView() {
-        
-    }
-    
-    func receiveFromParent(_ sender: Any) {
-        guard let senderWithData = sender as? WithData else { return }
-        
-        switch senderWithData.data {
-        case .start:
-            removeReadyView()
-            addCollectionView()
-        }
+    private func removeCollectionView() {
+        collectionViewController.willMove(toParent: nil)
+        collectionViewController.view.removeFromSuperview()
+        collectionViewController.removeFromParent()
     }
 }

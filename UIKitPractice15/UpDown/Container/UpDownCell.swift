@@ -13,4 +13,10 @@ class UpDownCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.numberLabel.textColor = .label
+        self.numberLabel.backgroundColor = .systemBackground
+    }
 }

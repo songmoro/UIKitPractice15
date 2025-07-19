@@ -13,8 +13,4 @@ class UpDownReadyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    func sendToParent() {
-        
-    }
 }

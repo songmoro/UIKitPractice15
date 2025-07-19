@@ -13,15 +13,5 @@ class UpDownBottomViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(#function, #fileID)
-        
-        gameButton.addTarget(self, action: #selector(gameButtonTapped), for: .touchUpInside)
-    }
-    
-    @objc func gameButtonTapped(_ sender: UIButton) {
-        sendToParent(sender)
-    }
-    
-    func sendToParent(_ sender: Any) {
-        (parent as? UpDownViewController)?.receiveFromChild(WithData(sender: sender, data: .start))
     }
 }
