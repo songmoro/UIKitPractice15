@@ -26,8 +26,7 @@ class UpDownTopViewController: UIViewController {
             case .down: "DOWN"
             default: "UP DOWN"
             }
-        case .end:
-            "GOOD!"
+        case .end: "GOOD!"
         default: "UP DOWN"
         }
         
