@@ -91,5 +91,6 @@ extension UpDownViewController {
         
         topVC?.updateTitle(game)
         topVC?.updateDecription(game)
+        bottomVC?.updateButtonText(game)
     }
 }
