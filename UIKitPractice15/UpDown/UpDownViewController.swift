@@ -22,7 +22,7 @@ class UpDownViewController: UIViewController {
         super.viewDidLoad()
         print(#function, #fileID)
         
-        view.border()
+//        view.border()
         
         configureView()
         configureContainerView()
