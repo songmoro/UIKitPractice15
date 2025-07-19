@@ -76,12 +76,12 @@ extension UpDownCollectionViewController {
 
 // MARK: inprogress
 extension UpDownCollectionViewController {
-    func compareNumber() -> UpDownResult {
+    func compareNumber() -> UpDownGame.UpDownState.CompareState {
         guard let selected else { return .none }
         self.selected = nil
         
         let number = items[selected.item]
-        let result: UpDownResult
+        let result: UpDownGame.UpDownState.CompareState
         
         print(answer)
         

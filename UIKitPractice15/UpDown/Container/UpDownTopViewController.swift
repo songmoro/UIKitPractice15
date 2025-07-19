@@ -16,13 +16,28 @@ class UpDownTopViewController: UIViewController {
         print(#function, #fileID)
     }
     
-    func updateTitle(_ state: UpDownState) {
-        let newText: String = switch state {
-        case .inprogress(.up): "UP"
-        case .inprogress(.down): "DOWN"
+    func updateTitle(_ game: UpDownGame) {
+        let newText: String = switch game.state {
+        case .inprogress(let result):
+            switch result {
+            case .up: "UP"
+            case .down: "DOWN"
+            default: "UP DOWN"
+            }
+        case .end:
+            "GOOD!"
         default: "UP DOWN"
         }
         
         titleLabel.text = newText
+    }
+    
+    func updateDecription(_ game: UpDownGame) {
+        let newText: String = switch game.state {
+        case .ready: "GAME"
+        case .inprogress, .end: "시도 횟수: \(game.count)"
+        }
+        
+        descriptionLabel.text = newText
     }
 }

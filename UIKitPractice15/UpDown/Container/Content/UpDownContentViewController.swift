@@ -39,7 +39,7 @@ extension UpDownContentViewController {
 
 // MARK: inprogress
 extension UpDownContentViewController {
-    func compareSelectedNumber() -> UpDownResult {
+    func compareSelectedNumber() -> UpDownGame.UpDownState.CompareState {
         return collectionViewController.compareNumber()
     }
 }

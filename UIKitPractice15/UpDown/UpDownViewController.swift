@@ -8,7 +8,7 @@
 import UIKit
 
 class UpDownViewController: UIViewController {
-    var state: UpDownState = .ready
+    var game = UpDownGame()
     
     @IBOutlet var topContainverView: UIView!
     @IBOutlet var contentContainerView: UIView!
@@ -65,9 +65,10 @@ extension UpDownViewController {
     
     @objc private func bottomContainerButtonTapped(_ sender: UIButton) {
         print(#function)
-        switch state {
+        
+        switch game.state {
         case .ready:
-            state.next()
+            game.state.next()
             contentVC?.prepareInprogress()
         case .inprogress:
             guard let contentVC else { return }
@@ -75,19 +76,19 @@ extension UpDownViewController {
             
             switch result {
             case .answer:
-                state.next()
+                game.state.next()
                 contentVC.prepareEnd()
-            case .up:
-                state = .inprogress(result: .up)
-            case .down:
-                state = .inprogress(result: .down)
+            case .up, .down:
+                game.count += 1
+                game.state.update(from: result)
             case .none:
                 break
             }
         case .end:
-            state.next()
+            game.state.next()
         }
         
-        topVC?.updateTitle(state)
+        topVC?.updateTitle(game)
+        topVC?.updateDecription(game)
     }
 }
