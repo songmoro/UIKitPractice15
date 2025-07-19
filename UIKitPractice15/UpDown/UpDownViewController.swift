@@ -85,7 +85,8 @@ extension UpDownViewController {
                 break
             }
         case .end:
-            game.state.next()
+            game = UpDownGame()
+            contentVC?.prepareReady()
         }
         
         topVC?.updateTitle(game)

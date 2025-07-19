@@ -35,6 +35,10 @@ extension UpDownContentViewController {
     func prepareEnd() {
         removeCollectionView()
     }
+    
+    func prepareReady() {
+        addReadyView()
+    }
 }
 
 // MARK: inprogress

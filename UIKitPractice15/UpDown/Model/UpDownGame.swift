@@ -16,12 +16,9 @@ struct UpDownGame {
         
         mutating func next() {
             self = switch self {
-            case .ready:
-                    .inprogress(.none)
-            case .inprogress:
-                    .end
-            case .end:
-                    .ready
+            case .ready: .inprogress(.none)
+            case .inprogress: .end
+            case .end: .ready
             }
         }
         
