@@ -7,15 +7,6 @@
 
 import UIKit
 
-enum DataType {
-    case start
-}
-
-struct WithData {
-    let sender: Any
-    let data: DataType
-}
-
 class UpDownViewController: UIViewController {
     var state: UpDownState = .ready
     
