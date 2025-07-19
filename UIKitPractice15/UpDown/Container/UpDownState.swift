@@ -7,6 +7,21 @@
 
 enum UpDownState {
     case ready
-    case inprogress
+    case inprogress(result: UpDownResult)
     case end
+    
+    mutating func next() {
+        self = switch self {
+        case .ready: .inprogress(result: .none)
+        case .inprogress: .end
+        case .end: .ready
+        }
+    }
+}
+
+enum UpDownResult {
+    case none
+    case up
+    case down
+    case answer
 }

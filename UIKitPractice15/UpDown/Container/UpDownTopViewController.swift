@@ -15,4 +15,14 @@ class UpDownTopViewController: UIViewController {
         super.viewDidLoad()
         print(#function, #fileID)
     }
+    
+    func updateTitle(_ state: UpDownState) {
+        let newText: String = switch state {
+        case .inprogress(.up): "UP"
+        case .inprogress(.down): "DOWN"
+        default: "UP DOWN"
+        }
+        
+        titleLabel.text = newText
+    }
 }

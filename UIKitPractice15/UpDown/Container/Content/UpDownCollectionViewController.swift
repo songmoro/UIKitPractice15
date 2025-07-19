@@ -76,27 +76,29 @@ extension UpDownCollectionViewController {
 
 // MARK: inprogress
 extension UpDownCollectionViewController {
-    func compareNumber() -> Bool {
-        guard let selected else { return false }
+    func compareNumber() -> UpDownResult {
+        guard let selected else { return .none }
+        self.selected = nil
+        
         let number = items[selected.item]
+        let result: UpDownResult
+        
         print(answer)
         
         if answer == number {
-            return true
+            result = .answer
         }
         else if answer > number {
-            items.removeAll(where: { (...number) ~= $0 })
-            self.selected = nil
-            collectionView.reloadData()
-            return false
+            result = .up
+            items.removeAll { (...number) ~= $0 }
         }
-        else if answer < number {
-            items.removeAll(where: { (number...) ~= $0 })
-            self.selected = nil
-            collectionView.reloadData()
-            return false
+        else {
+            result = .down
+            items.removeAll { (number...) ~= $0 }
         }
         
-        return true
+        collectionView.reloadData()
+        
+        return result
     }
 }

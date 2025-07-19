@@ -19,7 +19,7 @@ class UpDownContentViewController: UIViewController {
     }
 }
 
-// MARK: ready
+// MARK: state
 extension UpDownContentViewController {
     func prepareInprogress() {
         removeReadyView()
@@ -31,22 +31,17 @@ extension UpDownContentViewController {
         collectionViewController.items = range
         collectionViewController.answer = range.randomElement()!
     }
+    
+    func prepareEnd() {
+        removeCollectionView()
+    }
 }
 
 // MARK: inprogress
 extension UpDownContentViewController {
-    func prepareEnd() {
-        removeCollectionView()
-    }
-    
-    func compareSelectedNumber() -> Bool {
+    func compareSelectedNumber() -> UpDownResult {
         return collectionViewController.compareNumber()
     }
-}
-
-// MARK: end
-extension UpDownContentViewController {
-    
 }
 
 // MARK: prepare

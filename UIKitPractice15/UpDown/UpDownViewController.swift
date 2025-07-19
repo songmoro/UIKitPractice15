@@ -63,22 +63,31 @@ extension UpDownViewController {
         bottomVC = vc
     }
     
-    @objc func bottomContainerButtonTapped(_ sender: UIButton) {
+    @objc private func bottomContainerButtonTapped(_ sender: UIButton) {
         print(#function)
         switch state {
         case .ready:
-            state = .inprogress
+            state.next()
             contentVC?.prepareInprogress()
         case .inprogress:
-            if contentVC?.compareSelectedNumber() == true {
-                state = .end
-                contentVC?.prepareEnd()
-            }
-            else {
-                // TODO: tryCount += 1
+            guard let contentVC else { return }
+            let result = contentVC.compareSelectedNumber()
+            
+            switch result {
+            case .answer:
+                state.next()
+                contentVC.prepareEnd()
+            case .up:
+                state = .inprogress(result: .up)
+            case .down:
+                state = .inprogress(result: .down)
+            case .none:
+                break
             }
         case .end:
-            state = .ready
+            state.next()
         }
+        
+        topVC?.updateTitle(state)
     }
 }
