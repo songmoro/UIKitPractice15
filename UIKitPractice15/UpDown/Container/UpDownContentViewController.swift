@@ -51,6 +51,7 @@ extension UpDownContentViewController {
 
 // MARK: prepare
 extension UpDownContentViewController {
+    // TODO: 중복 감소
     private func addReadyView() {
         guard let vc = Bundle.main.loadNibNamed("UpDownReadyViewController", owner: nil)?.first as? UpDownReadyViewController else { return }
         

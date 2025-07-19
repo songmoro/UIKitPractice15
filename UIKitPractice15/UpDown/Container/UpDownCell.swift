@@ -10,14 +10,24 @@ import UIKit
 class UpDownCell: UICollectionViewCell {
     @IBOutlet var numberLabel: UILabel!
     
+    override var isSelected: Bool {
+        didSet {
+            updateColors()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        self.numberLabel.textColor = .label
-        self.numberLabel.backgroundColor = .systemBackground
+        isSelected = false
+    }
+    
+    private func updateColors() {
+        self.numberLabel.textColor = isSelected ? .systemBackground : .label
+        self.numberLabel.backgroundColor = isSelected ? .label : .systemBackground
     }
     
     func configureView() {

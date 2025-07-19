@@ -84,10 +84,10 @@ extension UpDownViewController {
                 contentVC?.prepareEnd()
             }
             else {
-                // tryCount += 1
+                // TODO: tryCount += 1
             }
         case .end:
-            break
+            state = .ready
         }
     }
 }

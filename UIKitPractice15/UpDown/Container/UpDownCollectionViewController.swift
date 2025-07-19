@@ -64,26 +64,13 @@ extension UpDownCollectionViewController {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(#function, indexPath)
-        removeSelcted()
+        
+        if let selected {
+            collectionView.cellForItem(at: selected)?.isSelected = false
+        }
+        
+        collectionView.cellForItem(at: indexPath)?.isSelected = true
         selected = indexPath
-        updateSelected()
-    }
-    
-    // TODO: move to cell
-    func updateSelected() {
-        guard let selected else { return }
-        guard let cell = collectionView.cellForItem(at: selected) as? UpDownCell else { return }
-        
-        cell.numberLabel.textColor = .systemBackground
-        cell.numberLabel.backgroundColor = .label
-    }
-    
-    func removeSelcted() {
-        guard let selected else { return }
-        guard let cell = collectionView.cellForItem(at: selected) as? UpDownCell else { return }
-        
-        cell.numberLabel.textColor = .label
-        cell.numberLabel.backgroundColor = .systemBackground
     }
 }
 
