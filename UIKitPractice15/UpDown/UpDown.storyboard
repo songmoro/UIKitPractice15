@@ -141,52 +141,6 @@
             </objects>
             <point key="canvasLocation" x="968.70229007633588" y="-350"/>
         </scene>
-        <!--Up Down Content View Controller-->
-        <scene sceneID="sSG-Sw-QkY">
-            <objects>
-                <viewController id="Q3F-7B-GC2" customClass="UpDownContentViewController" customModule="UIKitPractice15" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qNN-oe-4Po">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="UpDownGame/emotion1" translatesAutoresizingMaskIntoConstraints="NO" id="5Wt-dm-fXm">
-                                <rect key="frame" x="-59" y="0.0" width="511" height="681.66666666666663"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="5Wt-dm-fXm" secondAttribute="height" multiplier="3:4" id="lbF-aU-MiE"/>
-                                </constraints>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iZt-Fj-B2F">
-                                <rect key="frame" x="78.666666666666671" y="851" width="235.66666666666663" height="1"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="aQh-9y-hTT"/>
-                                </constraints>
-                            </view>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="300" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uB1-Lg-7Wk">
-                                <rect key="frame" x="78.666666666666671" y="819" width="235.66666666666663" height="33"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="26"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="4If-l9-HDT"/>
-                        <constraints>
-                            <constraint firstItem="uB1-Lg-7Wk" firstAttribute="centerX" secondItem="4If-l9-HDT" secondAttribute="centerX" id="23I-eR-W6E"/>
-                            <constraint firstItem="5Wt-dm-fXm" firstAttribute="height" secondItem="qNN-oe-4Po" secondAttribute="height" multiplier="0.8" id="EOQ-vx-Sga"/>
-                            <constraint firstItem="iZt-Fj-B2F" firstAttribute="bottom" secondItem="uB1-Lg-7Wk" secondAttribute="bottom" id="Jn2-rg-SAd"/>
-                            <constraint firstItem="iZt-Fj-B2F" firstAttribute="centerX" secondItem="uB1-Lg-7Wk" secondAttribute="centerX" id="N5o-NC-1bC"/>
-                            <constraint firstItem="5Wt-dm-fXm" firstAttribute="centerX" secondItem="4If-l9-HDT" secondAttribute="centerX" id="Uj1-W0-9mK"/>
-                            <constraint firstItem="iZt-Fj-B2F" firstAttribute="width" secondItem="uB1-Lg-7Wk" secondAttribute="width" id="cgm-Jw-LpR"/>
-                            <constraint firstAttribute="bottom" secondItem="uB1-Lg-7Wk" secondAttribute="bottom" id="qIS-Mo-6gJ"/>
-                            <constraint firstItem="5Wt-dm-fXm" firstAttribute="top" secondItem="qNN-oe-4Po" secondAttribute="top" id="t5j-ZI-riP"/>
-                            <constraint firstItem="uB1-Lg-7Wk" firstAttribute="width" secondItem="qNN-oe-4Po" secondAttribute="width" multiplier="0.6" id="yoy-09-6dA"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BNP-3f-WTB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1711" y="36"/>
-        </scene>
         <!--Up Down Bottom View Controller-->
         <scene sceneID="Jz1-0X-rsf">
             <objects>
@@ -223,7 +177,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="UpDownGame/emotion1" width="327" height="360"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
