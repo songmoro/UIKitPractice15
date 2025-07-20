@@ -41,14 +41,13 @@ extension TravelTalkViewController: UICollectionViewDelegate, UICollectionViewDa
         
         // TODO: move to cell
         (cell as? FriendCell)?.friendImage.image = UIImage(named: "TravelTalk/\(chat.chatroomImage)")
-        (cell as? FriendCell)?.friendImage.layer.cornerRadius = (cell as! FriendCell).friendImage.bounds.height / 2
         (cell as? FriendCell)?.nameLabel.text = chat.chatroomName
         
         if let last = chat.chatList.last {
             (cell as? FriendCell)?.lastTalkLabel.text = last.message
             (cell as? FriendCell)?.dateLabel.text = last.dotDate
         }
-        
+//        print(#function, (cell as? FriendCell)?.friendImage.bounds)
         return cell
     }
     
@@ -57,5 +56,6 @@ extension TravelTalkViewController: UICollectionViewDelegate, UICollectionViewDa
         guard let vc = storyboard?.instantiateViewController(identifier: "ChattingViewController") as? ChattingViewController else { return }
         vc.chatList = list[indexPath.row].chatList
         navigationController?.pushViewController(vc, animated: true)
+//        print(#function, (cell as? FriendCell)?.friendImage.bounds)
     }
 }

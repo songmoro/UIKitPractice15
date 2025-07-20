@@ -17,5 +17,33 @@ class FriendCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        friendImage.layer.cornerRadius = friendImage.bounds.width / 2
+    }
+    
+    override func setNeedsLayout() {
+        super.setNeedsLayout()
+//        print(#function, friendImage.bounds)
+    }
+    
+    override func setNeedsDisplay(_ rect: CGRect) {
+        super.setNeedsDisplay(rect)
+//        print(#function, friendImage.bounds)
+    }
+    
+    // TODO: drawing cycle
+    override func layerWillDraw(_ layer: CALayer) {
+        super.layerWillDraw(layer)
+//        print(#function, friendImage.bounds)
+        friendImage.layer.cornerRadius = friendImage.bounds.width / 2
+    }
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+//        print(#function, friendImage.bounds)
+    }
+    
+    override func layoutIfNeeded() {
+        super.layoutIfNeeded()
+//        print(#function, friendImage.bounds)
     }
 }
