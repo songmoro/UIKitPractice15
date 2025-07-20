@@ -46,7 +46,7 @@ extension TravelTalkViewController: UICollectionViewDelegate, UICollectionViewDa
         
         if let last = chat.chatList.last {
             (cell as? FriendCell)?.lastTalkLabel.text = last.message
-            (cell as? FriendCell)?.dateLabel.text = last.date
+            (cell as? FriendCell)?.dateLabel.text = last.dotDate
         }
         
         return cell

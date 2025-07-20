@@ -11,4 +11,17 @@ struct Chat {
     let user: User
     let date: String
     let message: String
+    
+    let dotDate: String
+    let timeDate: String
+    
+    // TODO: 검색용 String 배열
+    
+    init(user: User, date: String, message: String) {
+        self.user = user
+        self.date = date
+        self.message = message
+        self.dotDate = ChatDateFormatter.shared.toDotDateFormat(from: date)
+        self.timeDate = ChatDateFormatter.shared.toTimeFormat(from: date)
+    }
 }

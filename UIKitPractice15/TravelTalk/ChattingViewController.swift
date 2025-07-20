@@ -8,6 +8,7 @@
 import UIKit
 
 class ChattingViewController: UIViewController {
+    // TODO: 서치바, 검색
     var chatList: [Chat]?
 
     @IBOutlet var tableView: UITableView!
@@ -39,7 +40,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
 //            (cell as? MeChatCell)?.profileImage.image = UIImage(named: "TravelTalk/\(chat.user.image)")
 //            (cell as? MeChatCell)?.nameLabel.text = chat.user.name
             (cell as? MeChatCell)?.chatLabel.text = chat.message
-            (cell as? MeChatCell)?.timeLabel.text = chat.date
+            (cell as? MeChatCell)?.timeLabel.text = chat.timeDate
             
             return cell
         }
@@ -49,7 +50,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
             (cell as? YouChatCell)?.profileImage.image = UIImage(named: "TravelTalk/\(chat.user.image)")
             (cell as? YouChatCell)?.nameLabel.text = chat.user.name
             (cell as? YouChatCell)?.chatLabel.text = chat.message
-            (cell as? YouChatCell)?.timeLabel.text = chat.date
+            (cell as? YouChatCell)?.timeLabel.text = chat.timeDate
             
             return cell
         }
