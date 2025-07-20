@@ -23,6 +23,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "YouChatCell", bundle: nil), forCellReuseIdentifier: "YouChatCell")
+        tableView.register(UINib(nibName: "MeChatCell", bundle: nil), forCellReuseIdentifier: "MeChatCell")
 //        tableView.rowHeight = 150
     }
     
@@ -31,14 +32,26 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "YouChatCell", for: indexPath)
         guard let chat = chatList?[indexPath.row] else { return UITableViewCell() }
-        
-        (cell as? YouChatCell)?.profileImage.image = UIImage(named: "TravelTalk/\(chat.user.image)")
-        (cell as? YouChatCell)?.nameLabel.text = chat.user.name
-        (cell as? YouChatCell)?.chatLabel.text = chat.message
-        (cell as? YouChatCell)?.timeLabel.text = chat.date
-        
-        return cell
+        if chat.user.name == "김새싹" {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MeChatCell", for: indexPath)
+            
+//            (cell as? MeChatCell)?.profileImage.image = UIImage(named: "TravelTalk/\(chat.user.image)")
+//            (cell as? MeChatCell)?.nameLabel.text = chat.user.name
+            (cell as? MeChatCell)?.chatLabel.text = chat.message
+            (cell as? MeChatCell)?.timeLabel.text = chat.date
+            
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "YouChatCell", for: indexPath)
+            
+            (cell as? YouChatCell)?.profileImage.image = UIImage(named: "TravelTalk/\(chat.user.image)")
+            (cell as? YouChatCell)?.nameLabel.text = chat.user.name
+            (cell as? YouChatCell)?.chatLabel.text = chat.message
+            (cell as? YouChatCell)?.timeLabel.text = chat.date
+            
+            return cell
+        }
     }
 }

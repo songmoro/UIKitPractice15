@@ -11,9 +11,14 @@ class YouChatCell: UITableViewCell {
     @IBOutlet var profileImage: UIImageView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var chatLabel: UILabel!
+    @IBOutlet var chatLabelBackground: UIView!
     @IBOutlet var timeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        chatLabelBackground.layer.borderColor = UIColor.black.cgColor
+        chatLabelBackground.layer.borderWidth = 1
+        chatLabelBackground.layer.cornerRadius = 8
     }
 }
