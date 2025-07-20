@@ -25,6 +25,7 @@ extension UpDownContentViewController {
         removeReadyView()
         addCollectionView()
         
+        // TODO: 입력 값 처리
         guard let text = readyViewController.limitNumberTextField.text, let number = Int(text) else { return }
         // TODO: move to collectionVC
         let range = Array(1...number)
