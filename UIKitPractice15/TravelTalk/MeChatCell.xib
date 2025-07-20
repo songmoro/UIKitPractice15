@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,33 +18,51 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNx-TC-GCw">
-                        <rect key="frame" x="220.66666666666666" y="51" width="41.999999999999972" height="21"/>
+                        <rect key="frame" x="208.66666666666666" y="51" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJj-f2-eaV">
-                        <rect key="frame" x="270.66666666666669" y="12" width="41.333333333333314" height="60"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWN-dW-vbH">
+                        <rect key="frame" x="254.66666666666666" y="12" width="57.333333333333343" height="60"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJj-f2-eaV">
+                                <rect key="frame" x="8.0000000000000284" y="8" width="41.333333333333336" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="dJj-f2-eaV" secondAttribute="bottom" constant="8" id="HSO-Ek-6qj"/>
+                            <constraint firstItem="dJj-f2-eaV" firstAttribute="top" secondItem="KWN-dW-vbH" secondAttribute="top" constant="8" id="ZZw-IH-ZDw"/>
+                            <constraint firstItem="dJj-f2-eaV" firstAttribute="leading" secondItem="KWN-dW-vbH" secondAttribute="leading" constant="8" id="fg8-7n-qjD"/>
+                            <constraint firstAttribute="trailing" secondItem="dJj-f2-eaV" secondAttribute="trailing" constant="8" id="wph-Dh-IeB"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="dJj-f2-eaV" secondAttribute="bottom" constant="12" id="16i-6E-p8D"/>
+                    <constraint firstAttribute="bottom" secondItem="KWN-dW-vbH" secondAttribute="bottom" constant="12" id="CaJ-LP-UMr"/>
                     <constraint firstItem="UNx-TC-GCw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="G03-Om-AFn"/>
-                    <constraint firstItem="dJj-f2-eaV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="Wgk-KD-ulw"/>
-                    <constraint firstItem="UNx-TC-GCw" firstAttribute="bottom" secondItem="dJj-f2-eaV" secondAttribute="bottom" id="cJe-yx-zEv"/>
-                    <constraint firstItem="dJj-f2-eaV" firstAttribute="leading" secondItem="UNx-TC-GCw" secondAttribute="trailing" constant="8" id="kFR-hP-KLL"/>
-                    <constraint firstAttribute="trailing" secondItem="dJj-f2-eaV" secondAttribute="trailing" constant="8" id="uPd-Sk-5gx"/>
+                    <constraint firstItem="KWN-dW-vbH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="JaY-DG-h2K"/>
+                    <constraint firstItem="UNx-TC-GCw" firstAttribute="bottom" secondItem="KWN-dW-vbH" secondAttribute="bottom" id="XzO-Ri-Ng7"/>
+                    <constraint firstAttribute="trailing" secondItem="KWN-dW-vbH" secondAttribute="trailing" constant="8" id="kDh-rl-MU8"/>
+                    <constraint firstItem="KWN-dW-vbH" firstAttribute="leading" secondItem="UNx-TC-GCw" secondAttribute="trailing" constant="4" id="n4X-ag-vG4"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="chatLabel" destination="dJj-f2-eaV" id="gxS-Tf-mFF"/>
+                <outlet property="chatLabelBackground" destination="KWN-dW-vbH" id="icr-0g-aUb"/>
                 <outlet property="timeLabel" destination="UNx-TC-GCw" id="3m1-C2-paI"/>
             </connections>
             <point key="canvasLocation" x="97.70992366412213" y="33.802816901408455"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

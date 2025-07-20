@@ -17,7 +17,7 @@ class YouChatCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        chatLabelBackground.layer.borderColor = UIColor.black.cgColor
+        chatLabelBackground.layer.borderColor = UIColor.label.cgColor
         chatLabelBackground.layer.borderWidth = 1
         chatLabelBackground.layer.cornerRadius = 8
     }

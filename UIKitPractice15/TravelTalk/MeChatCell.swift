@@ -9,9 +9,14 @@ import UIKit
 
 class MeChatCell: UITableViewCell {
     @IBOutlet var chatLabel: UILabel!
+    @IBOutlet var chatLabelBackground: UIView!
     @IBOutlet var timeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        chatLabelBackground.layer.borderColor = UIColor.label.cgColor
+        chatLabelBackground.layer.borderWidth = 1
+        chatLabelBackground.layer.cornerRadius = 8
     }
 }
