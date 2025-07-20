@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNx-TC-GCw">
-                        <rect key="frame" x="208.66666666666666" y="51" width="42" height="21"/>
+                        <rect key="frame" x="204.66666666666666" y="51" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -48,7 +48,7 @@
                     <constraint firstItem="KWN-dW-vbH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="JaY-DG-h2K"/>
                     <constraint firstItem="UNx-TC-GCw" firstAttribute="bottom" secondItem="KWN-dW-vbH" secondAttribute="bottom" id="XzO-Ri-Ng7"/>
                     <constraint firstAttribute="trailing" secondItem="KWN-dW-vbH" secondAttribute="trailing" constant="8" id="kDh-rl-MU8"/>
-                    <constraint firstItem="KWN-dW-vbH" firstAttribute="leading" secondItem="UNx-TC-GCw" secondAttribute="trailing" constant="4" id="n4X-ag-vG4"/>
+                    <constraint firstItem="KWN-dW-vbH" firstAttribute="leading" secondItem="UNx-TC-GCw" secondAttribute="trailing" constant="8" id="n4X-ag-vG4"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

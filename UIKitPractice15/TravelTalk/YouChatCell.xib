@@ -30,7 +30,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bP8-8C-KQg">
-                        <rect key="frame" x="110.33333333333331" y="53" width="42" height="21"/>
+                        <rect key="frame" x="114.33333333333331" y="53" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -55,7 +55,7 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="bP8-8C-KQg" firstAttribute="leading" secondItem="UyI-AL-p2D" secondAttribute="trailing" constant="4" id="CC6-Ca-KIz"/>
+                    <constraint firstItem="bP8-8C-KQg" firstAttribute="leading" secondItem="UyI-AL-p2D" secondAttribute="trailing" constant="8" id="CC6-Ca-KIz"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bP8-8C-KQg" secondAttribute="trailing" constant="8" id="CTE-G9-Hw5"/>
                     <constraint firstItem="UyI-AL-p2D" firstAttribute="leading" secondItem="p5r-QE-TRp" secondAttribute="leading" id="HTx-Gm-gYF"/>
                     <constraint firstItem="p5r-QE-TRp" firstAttribute="top" secondItem="J39-96-YXX" secondAttribute="top" id="HtV-MQ-Vwl"/>
