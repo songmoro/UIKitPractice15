@@ -11,38 +11,75 @@
         <!--TRAVEL TALK-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="TravelTalkViewController" customModule="UIKitPractice15" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GQq-VY-Vt9">
-                                <rect key="frame" x="0.0" y="306" width="393" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="GQq-VY-Vt9">
+                                <rect key="frame" x="12" y="162" width="369" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="6k1-nB-cYe"/>
                                 </connections>
                             </searchBar>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="coG-5A-uVr">
-                                <rect key="frame" x="76" y="436" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="coG-5A-uVr">
+                                <rect key="frame" x="0.0" y="218" width="393" height="1"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="e2X-hu-kbt"/>
+                                </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="79z-Dg-leC">
-                                <rect key="frame" x="76" y="626" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="daN-O1-Bxv">
+                                <rect key="frame" x="12" y="219" width="369" height="565"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NBR-5n-v48">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="coG-5A-uVr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="85d-XT-LNr"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="GQq-VY-Vt9" secondAttribute="trailing" constant="12" id="CFc-qc-4kT"/>
+                            <constraint firstItem="GQq-VY-Vt9" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Ic7-HF-mN3"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="coG-5A-uVr" secondAttribute="trailing" id="cOy-ii-DE6"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="daN-O1-Bxv" secondAttribute="bottom" id="etc-SK-euU"/>
+                            <constraint firstItem="daN-O1-Bxv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="12" id="jQm-aI-Vge"/>
+                            <constraint firstItem="GQq-VY-Vt9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="12" id="kZf-cD-fgH"/>
+                            <constraint firstItem="coG-5A-uVr" firstAttribute="top" secondItem="GQq-VY-Vt9" secondAttribute="bottom" id="lN6-IC-6DN"/>
+                            <constraint firstItem="daN-O1-Bxv" firstAttribute="top" secondItem="coG-5A-uVr" secondAttribute="bottom" id="ySv-O7-qTg"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="daN-O1-Bxv" secondAttribute="trailing" constant="12" id="zzo-6l-1dc"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="TRAVEL TALK" id="kJE-Ka-D9n"/>
+                    <connections>
+                        <outlet property="collectionView" destination="daN-O1-Bxv" id="qLo-Tx-ncF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="98" y="70"/>
+            <point key="canvasLocation" x="96.946564885496173" y="69.718309859154928"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cbE-oc-Fjy">
+            <objects>
+                <viewController id="Kxr-tF-ps2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6qF-CJ-tPn">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="vaB-bO-A3P"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mmc-5k-es5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="97" y="774"/>
         </scene>
         <!--Talk-->
         <scene sceneID="5Uf-KI-8Ei">
