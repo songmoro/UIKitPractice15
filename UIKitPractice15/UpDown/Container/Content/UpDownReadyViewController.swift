@@ -8,6 +8,7 @@
 import UIKit
 
 class UpDownReadyViewController: UIViewController {
+    // TODO: 키보드 위치 처리
     @IBOutlet var limitNumberTextField: UITextField!
     
     override func viewDidLoad() {
