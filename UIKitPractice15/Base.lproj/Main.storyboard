@@ -15,41 +15,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ldz-rO-aye" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1923" y="-215"/>
-        </scene>
-        <!--UpDown-->
-        <scene sceneID="SWu-7o-wxv">
-            <objects>
-                <navigationController id="bEI-kr-SVQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="UpDown" image="arrow.up.arrow.down" catalog="system" selectedImage="arrow.up.arrow.down" id="zq9-FT-yG2"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="q8q-Nj-L3f">
-                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="Hgb-AC-rzg" kind="relationship" relationship="rootViewController" id="ywD-6E-9oO"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cdK-dO-opz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1108" y="-485"/>
-        </scene>
-        <!--Talk-->
-        <scene sceneID="dV5-uM-gwR">
-            <objects>
-                <navigationController id="bvI-K4-i0O" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Talk" image="bubble.right" catalog="system" selectedImage="bubble.right.fill" id="CPL-sn-daB"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pnt-ig-lSG">
-                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="FEB-PU-Smb" kind="relationship" relationship="rootViewController" id="1Sa-8x-vsG"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jUs-h8-2YS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1141" y="201"/>
+            <point key="canvasLocation" x="993" y="-382"/>
         </scene>
         <!--TravelTalk-->
         <scene sceneID="TDW-H3-fVH">
@@ -60,7 +26,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nHg-cJ-m53" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1887" y="173"/>
+            <point key="canvasLocation" x="986" y="63"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="BTf-in-NIE">
@@ -72,8 +38,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="bEI-kr-SVQ" kind="relationship" relationship="viewControllers" id="bxs-E4-NUP"/>
-                        <segue destination="bvI-K4-i0O" kind="relationship" relationship="viewControllers" id="82Y-Zk-Gjc"/>
+                        <segue destination="Hgb-AC-rzg" kind="relationship" relationship="viewControllers" id="ybu-gZ-aOz"/>
+                        <segue destination="FEB-PU-Smb" kind="relationship" relationship="viewControllers" id="hcE-7g-uyP"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UDQ-Vu-TSS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -81,9 +47,4 @@
             <point key="canvasLocation" x="204" y="-63"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="arrow.up.arrow.down" catalog="system" width="128" height="97"/>
-        <image name="bubble.right" catalog="system" width="128" height="110"/>
-        <image name="bubble.right.fill" catalog="system" width="128" height="110"/>
-    </resources>
 </document>
