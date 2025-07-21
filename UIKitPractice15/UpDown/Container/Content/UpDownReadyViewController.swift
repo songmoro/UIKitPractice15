@@ -8,10 +8,18 @@
 import UIKit
 
 class UpDownReadyViewController: UIViewController {
-    // TODO: 키보드 위치 처리
     @IBOutlet var limitNumberTextField: UITextField!
+    @IBOutlet var textFieldView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        textFieldView.translatesAutoresizingMaskIntoConstraints = false
+        view.keyboardLayoutGuide.topAnchor.constraint(equalTo: textFieldView.bottomAnchor).isActive = true
+    }
+    
+    // TODO: 화면 터치 입력 종료
+    @IBAction func textFieldDidEndOnExit(_ sender: UITextField) {
+        
     }
 }

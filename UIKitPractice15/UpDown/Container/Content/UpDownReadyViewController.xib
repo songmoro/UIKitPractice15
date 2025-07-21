@@ -21,35 +21,48 @@
                             <constraint firstAttribute="width" secondItem="HX9-UI-GCl" secondAttribute="height" multiplier="3:4" id="jIY-Zy-fs0"/>
                         </constraints>
                     </imageView>
-                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="300" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TFp-3F-u8n">
+                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r99-lL-Qwp" userLabel="textFieldView">
                         <rect key="frame" x="78.666666666666671" y="751" width="235.66666666666663" height="33"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="26"/>
-                        <textInputTraits key="textInputTraits"/>
-                    </textField>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iPO-mz-WXQ">
-                        <rect key="frame" x="78.666666666666671" y="783" width="235.66666666666663" height="1"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="300" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TFp-3F-u8n">
+                                <rect key="frame" x="0.0" y="0.0" width="235.66666666666666" height="33"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="26"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldDidEndOnExit:" destination="KLJ-Km-lhM" eventType="editingDidEndOnExit" id="JrN-tk-buB"/>
+                                </connections>
+                            </textField>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iPO-mz-WXQ">
+                                <rect key="frame" x="0.0" y="32" width="235.66666666666663" height="1"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="You-AH-w8u"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <constraints>
-                            <constraint firstAttribute="height" constant="1" id="You-AH-w8u"/>
+                            <constraint firstItem="TFp-3F-u8n" firstAttribute="centerX" secondItem="r99-lL-Qwp" secondAttribute="centerX" id="2e2-Md-WkM"/>
+                            <constraint firstAttribute="bottom" secondItem="iPO-mz-WXQ" secondAttribute="bottom" id="DdR-yg-53j"/>
+                            <constraint firstItem="TFp-3F-u8n" firstAttribute="width" secondItem="r99-lL-Qwp" secondAttribute="width" id="Ju1-vY-5dn"/>
+                            <constraint firstItem="TFp-3F-u8n" firstAttribute="height" secondItem="r99-lL-Qwp" secondAttribute="height" id="dEV-NG-v64"/>
+                            <constraint firstItem="TFp-3F-u8n" firstAttribute="centerY" secondItem="r99-lL-Qwp" secondAttribute="centerY" id="tnQ-xA-zi1"/>
+                            <constraint firstItem="iPO-mz-WXQ" firstAttribute="width" secondItem="r99-lL-Qwp" secondAttribute="width" id="uUT-a7-md0"/>
                         </constraints>
                     </view>
                 </subviews>
                 <viewLayoutGuide key="safeArea" id="Ne4-NP-b0v"/>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="iPO-mz-WXQ" firstAttribute="width" secondItem="TFp-3F-u8n" secondAttribute="width" id="0FY-kc-bNl"/>
                     <constraint firstItem="HX9-UI-GCl" firstAttribute="top" secondItem="Ne4-NP-b0v" secondAttribute="top" id="5MN-YH-JC3"/>
-                    <constraint firstItem="iPO-mz-WXQ" firstAttribute="centerX" secondItem="TFp-3F-u8n" secondAttribute="centerX" id="FnQ-l4-hex"/>
-                    <constraint firstItem="TFp-3F-u8n" firstAttribute="width" secondItem="Vt7-yu-y2e" secondAttribute="width" multiplier="0.6" id="Ltb-kb-IZH"/>
-                    <constraint firstItem="iPO-mz-WXQ" firstAttribute="bottom" secondItem="TFp-3F-u8n" secondAttribute="bottom" id="arx-C3-iFe"/>
+                    <constraint firstItem="r99-lL-Qwp" firstAttribute="centerX" secondItem="Ne4-NP-b0v" secondAttribute="centerX" id="StA-qF-GMO"/>
                     <constraint firstItem="HX9-UI-GCl" firstAttribute="centerX" secondItem="Vt7-yu-y2e" secondAttribute="centerX" id="d7L-AV-cG2"/>
-                    <constraint firstItem="TFp-3F-u8n" firstAttribute="centerX" secondItem="Vt7-yu-y2e" secondAttribute="centerX" id="ffX-Mv-yKc"/>
-                    <constraint firstItem="Ne4-NP-b0v" firstAttribute="bottom" secondItem="TFp-3F-u8n" secondAttribute="bottom" id="x86-da-N8B"/>
+                    <constraint firstItem="r99-lL-Qwp" firstAttribute="width" secondItem="Ne4-NP-b0v" secondAttribute="width" multiplier="0.6" id="ubV-v4-d20"/>
                 </constraints>
             </view>
             <connections>
                 <outlet property="limitNumberTextField" destination="TFp-3F-u8n" id="GMc-az-6SL"/>
+                <outlet property="textFieldView" destination="r99-lL-Qwp" id="rad-X2-daD"/>
             </connections>
             <point key="canvasLocation" x="1924.4274809160304" y="117.60563380281691"/>
         </viewController>
