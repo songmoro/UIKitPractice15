@@ -11,10 +11,6 @@ class UpDownTopViewController: UIViewController {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     func updateTitle(_ game: UpDownGame) {
         titleLabel.text = game.titleText
     }

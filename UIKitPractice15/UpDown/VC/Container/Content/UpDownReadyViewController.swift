@@ -22,4 +22,8 @@ class UpDownReadyViewController: UIViewController, IsIdentifiable {
     @IBAction func textFieldDidEndOnExit(_ sender: UITextField) {
         
     }
+    
+    @IBAction func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }

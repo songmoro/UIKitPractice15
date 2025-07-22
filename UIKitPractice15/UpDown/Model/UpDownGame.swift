@@ -5,6 +5,9 @@
 //  Created by 송재훈 on 7/18/25.
 //
 
+// TODO: 에러로 케이스 핸들링하기
+// -> ex. guard let isCorrect else { return .exceededNumber }
+
 class UpDownGame {
     private(set) var state: UpDownState
     private(set) var count: Int

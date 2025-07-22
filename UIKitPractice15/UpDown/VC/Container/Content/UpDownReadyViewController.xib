@@ -28,7 +28,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="235.66666666666666" height="33"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="26"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <action selector="textFieldDidEndOnExit:" destination="KLJ-Km-lhM" eventType="editingDidEndOnExit" id="JrN-tk-buB"/>
                                 </connections>
@@ -53,12 +53,16 @@
                 </subviews>
                 <viewLayoutGuide key="safeArea" id="Ne4-NP-b0v"/>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <gestureRecognizers/>
                 <constraints>
                     <constraint firstItem="HX9-UI-GCl" firstAttribute="top" secondItem="Ne4-NP-b0v" secondAttribute="top" id="5MN-YH-JC3"/>
                     <constraint firstItem="r99-lL-Qwp" firstAttribute="centerX" secondItem="Ne4-NP-b0v" secondAttribute="centerX" id="StA-qF-GMO"/>
                     <constraint firstItem="HX9-UI-GCl" firstAttribute="centerX" secondItem="Vt7-yu-y2e" secondAttribute="centerX" id="d7L-AV-cG2"/>
                     <constraint firstItem="r99-lL-Qwp" firstAttribute="width" secondItem="Ne4-NP-b0v" secondAttribute="width" multiplier="0.6" id="ubV-v4-d20"/>
                 </constraints>
+                <connections>
+                    <outletCollection property="gestureRecognizers" destination="kWp-Ty-CHG" appends="YES" id="Wgd-Dd-8mN"/>
+                </connections>
             </view>
             <connections>
                 <outlet property="limitNumberTextField" destination="TFp-3F-u8n" id="GMc-az-6SL"/>
@@ -66,6 +70,11 @@
             </connections>
             <point key="canvasLocation" x="1924.4274809160304" y="117.60563380281691"/>
         </viewController>
+        <tapGestureRecognizer id="kWp-Ty-CHG">
+            <connections>
+                <action selector="dismissKeyboard" destination="KLJ-Km-lhM" id="fAm-Ch-olq"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="UpDownGame/emotion1" width="327" height="360"/>

@@ -21,8 +21,6 @@ class UpDownViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.border()
-        
         configureView()
         configureContainerView()
     }

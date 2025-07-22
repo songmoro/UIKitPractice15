@@ -20,8 +20,6 @@ class ChattingViewController: UIViewController, IsIdentifiable {
         super.viewDidLoad()
         configureTextView()
         configureTableView()
-        
-        view.border()
     }
     
     override func viewWillAppear(_ animated: Bool) {
