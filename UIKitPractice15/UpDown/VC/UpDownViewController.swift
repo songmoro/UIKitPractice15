@@ -76,16 +76,16 @@ extension UpDownViewController {
             
             if game.isCorrect(number: number)  {
                 contentVC.prepareEnd()
-                return
             }
-            
-            switch game.whyIsntItCorrect(number: number) {
-            case .up:
-                contentVC.removeFirstToNumber(number)
-            case .down:
-                contentVC.removeNumberToLast(number)
-            default:
-                break
+            else {   
+                switch game.whyIsntItCorrect(number: number) {
+                case .up:
+                    contentVC.removeFirstToNumber(number)
+                case .down:
+                    contentVC.removeNumberToLast(number)
+                default:
+                    break
+                }
             }
         case .end:
             game = UpDownGame()

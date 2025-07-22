@@ -70,6 +70,7 @@ class UpDownGame {
         
         if number == answer {
             next()
+            return true
         }
         else if number < answer {
             update(.up)
@@ -78,7 +79,7 @@ class UpDownGame {
             update(.down)
         }
         
-        return number == answer
+        return false
     }
     
     func whyIsntItCorrect(number: Int) -> CompareState {
@@ -114,7 +115,6 @@ class UpDownGame {
     // MARK: Compare
     enum CompareState {
         case none
-        case answer
         case up
         case down
     }
