@@ -9,7 +9,7 @@ import UIKit
 
 // TODO: 데이트 포맷
 // TODO: 레이블
-class FriendCell: UICollectionViewCell {
+class FriendCell: UICollectionViewCell, IsIdentifiable {
     @IBOutlet var friendImage: UIImageView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var lastTalkLabel: UILabel!

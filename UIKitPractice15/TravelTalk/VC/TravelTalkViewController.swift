@@ -21,7 +21,7 @@ extension TravelTalkViewController: UICollectionViewDelegate, UICollectionViewDa
     private func configureCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(UINib(nibName: "FriendCell", bundle: nil), forCellWithReuseIdentifier: "FriendCell")
+        collectionView.register(UINib(nibName: FriendCell.identifier, bundle: nil), forCellWithReuseIdentifier: FriendCell.identifier)
         
         let bounds = collectionView.bounds
         let layout = UICollectionViewFlowLayout()
@@ -36,7 +36,7 @@ extension TravelTalkViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FriendCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FriendCell.identifier, for: indexPath)
         let chat = list[indexPath.row]
         
         // TODO: move to cell
@@ -54,7 +54,7 @@ extension TravelTalkViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) else { return }
-        guard let vc = storyboard?.instantiateViewController(identifier: "ChattingViewController") as? ChattingViewController else { return }
+        guard let vc = storyboard?.instantiateViewController(identifier: ChattingViewController.identifier) as? ChattingViewController else { return }
         vc.chatList = list[indexPath.row].chatList
         
         navigationController?.pushViewController(vc, animated: true)

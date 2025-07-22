@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UpDownCell: UICollectionViewCell {
+class UpDownCell: UICollectionViewCell, IsIdentifiable {
     @IBOutlet var numberLabel: UILabel!
     
     override var isSelected: Bool {

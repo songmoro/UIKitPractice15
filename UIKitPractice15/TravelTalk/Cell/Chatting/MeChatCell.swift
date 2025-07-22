@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MeChatCell: UITableViewCell {
+class MeChatCell: UITableViewCell, IsIdentifiable {
     @IBOutlet var chatLabel: UILabel!
     @IBOutlet var chatLabelBackground: UIView!
     @IBOutlet var timeLabel: UILabel!

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class YouChatCell: UITableViewCell {
+class YouChatCell: UITableViewCell, IsIdentifiable {
     @IBOutlet var profileImage: UIImageView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var chatLabel: UILabel!

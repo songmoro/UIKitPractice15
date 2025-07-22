@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChattingViewController: UIViewController {
+class ChattingViewController: UIViewController, IsIdentifiable {
     // TODO: 서치바, 검색
     var chatList: [Chat]?
 
@@ -47,8 +47,8 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
     func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UINib(nibName: "YouChatCell", bundle: nil), forCellReuseIdentifier: "YouChatCell")
-        tableView.register(UINib(nibName: "MeChatCell", bundle: nil), forCellReuseIdentifier: "MeChatCell")
+        tableView.register(UINib(nibName: MeChatCell.identifier, bundle: nil), forCellReuseIdentifier: MeChatCell.identifier)
+        tableView.register(UINib(nibName: YouChatCell.identifier, bundle: nil), forCellReuseIdentifier: YouChatCell.identifier)
         tableView.separatorStyle = .none
     }
     
@@ -59,14 +59,14 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let chat = chatList?[indexPath.row] else { return UITableViewCell() }
         if chat.user.name == "김새싹" {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MeChatCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: MeChatCell.identifier, for: indexPath)
             (cell as? MeChatCell)?.chatLabel.text = chat.message
             (cell as? MeChatCell)?.timeLabel.text = chat.timeDate
             
             return cell
         }
         else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "YouChatCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: YouChatCell.identifier, for: indexPath)
             
             (cell as? YouChatCell)?.profileImage.image = UIImage(imageNamed: chat.user.image)
             (cell as? YouChatCell)?.nameLabel.text = chat.user.name

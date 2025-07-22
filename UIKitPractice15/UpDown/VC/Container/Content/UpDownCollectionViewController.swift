@@ -24,7 +24,7 @@ extension UpDownCollectionViewController {
     private func configureCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(UINib(nibName: "UpDownCell", bundle: nil), forCellWithReuseIdentifier: "UpDownCell")
+        collectionView.register(UINib(nibName: UpDownCell.identifier, bundle: nil), forCellWithReuseIdentifier: UpDownCell.identifier)
         
         let layout = UICollectionViewFlowLayout()
         let height = collectionView.bounds.height
@@ -51,7 +51,7 @@ extension UpDownCollectionViewController {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UpDownCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UpDownCell.identifier, for: indexPath)
         let itemNumber = items[indexPath.item]
         
         (cell as? UpDownCell)?.numberLabel.text = "\(itemNumber)"
