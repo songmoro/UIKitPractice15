@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UpDownCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class UpDownCollectionViewController: UIViewController, IsIdentifiable {
     @IBOutlet var collectionView: UICollectionView!
 
     var items: [Int] = []
@@ -20,7 +20,7 @@ class UpDownCollectionViewController: UIViewController, UICollectionViewDelegate
 }
 
 // MARK: CollectionView
-extension UpDownCollectionViewController {
+extension UpDownCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     private func configureCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self

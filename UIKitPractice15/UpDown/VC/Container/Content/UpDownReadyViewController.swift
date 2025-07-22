@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UpDownReadyViewController: UIViewController {
+class UpDownReadyViewController: UIViewController, IsIdentifiable {
     @IBOutlet var limitNumberTextField: UITextField!
     @IBOutlet var textFieldView: UIView!
     
