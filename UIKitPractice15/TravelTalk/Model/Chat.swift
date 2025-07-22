@@ -16,6 +16,7 @@ struct Chat {
     let timeDate: String
     
     // TODO: 검색용 String 배열
+    // TODO: ㄴ Set<Character>가 더 나을 것 같다고 생각됨
     
     init(user: User, date: String, message: String) {
         self.user = user

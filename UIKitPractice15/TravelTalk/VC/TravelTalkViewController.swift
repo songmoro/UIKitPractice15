@@ -53,7 +53,6 @@ extension TravelTalkViewController: UICollectionViewDelegate, UICollectionViewDa
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.cellForItem(at: indexPath) else { return }
         guard let vc = storyboard?.instantiateViewController(identifier: ChattingViewController.identifier) as? ChattingViewController else { return }
         vc.chatList = list[indexPath.row].chatList
         
