@@ -31,7 +31,6 @@ struct UpDownGame {
             }
         }
         
-        // TODO: 모델 내부 모델의 위치는 바깥 or 안
         enum CompareState {
             case none
             case answer
