@@ -75,29 +75,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bGJ-pQ-TRA">
-                                <rect key="frame" x="12" y="118" width="369" height="606"/>
+                                <rect key="frame" x="12" y="118" width="369" height="602"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LWd-wi-999">
-                                <rect key="frame" x="0.0" y="724" width="393" height="60"/>
+                            <view contentMode="scaleToFill" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="LWd-wi-999">
+                                <rect key="frame" x="0.0" y="720" width="393" height="64"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mUL-GF-sQx">
-                                        <rect key="frame" x="39.333333333333343" y="0.0" width="314.33333333333326" height="60"/>
+                                        <rect key="frame" x="39.333333333333343" y="0.0" width="314.33333333333326" height="64"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6YQ-LJ-WZw">
+                                        <rect key="frame" x="341" y="12" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="hqd-Mi-6pe"/>
+                                            <constraint firstAttribute="width" constant="40" id="z7I-Kk-lX9"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="arrowtriangle.right" catalog="system"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="mUL-GF-sQx" firstAttribute="centerX" secondItem="LWd-wi-999" secondAttribute="centerX" id="0u8-yW-5sn"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="FgJ-lx-GYa"/>
-                                    <constraint firstItem="mUL-GF-sQx" firstAttribute="top" secondItem="LWd-wi-999" secondAttribute="top" id="WaF-1v-N5s"/>
+                                    <constraint firstAttribute="bottom" secondItem="6YQ-LJ-WZw" secondAttribute="bottom" constant="12" id="5o6-FH-sPW"/>
+                                    <constraint firstAttribute="trailing" secondItem="6YQ-LJ-WZw" secondAttribute="trailing" constant="12" id="S1w-07-iwp"/>
+                                    <constraint firstItem="mUL-GF-sQx" firstAttribute="firstBaseline" secondItem="LWd-wi-999" secondAttribute="top" id="WaF-1v-N5s"/>
+                                    <constraint firstItem="6YQ-LJ-WZw" firstAttribute="top" secondItem="LWd-wi-999" secondAttribute="top" constant="12" id="jTV-75-WOj"/>
                                     <constraint firstItem="mUL-GF-sQx" firstAttribute="width" secondItem="LWd-wi-999" secondAttribute="width" multiplier="0.8" id="kBd-4J-Drr"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="120" id="u8p-pt-tiV"/>
-                                    <constraint firstAttribute="bottom" secondItem="mUL-GF-sQx" secondAttribute="bottom" id="v0L-YZ-yJ5"/>
+                                    <constraint firstAttribute="height" constant="64" id="kM6-kD-cDA"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="tXG-cV-cg3"/>
+                                    <constraint firstAttribute="bottom" secondItem="mUL-GF-sQx" secondAttribute="baseline" id="v0L-YZ-yJ5"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -115,6 +127,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="sendButton" destination="6YQ-LJ-WZw" id="iYq-gN-eMY"/>
                         <outlet property="tableView" destination="bGJ-pQ-TRA" id="LeN-8p-m3i"/>
                         <outlet property="textView" destination="mUL-GF-sQx" id="78E-qo-6Q6"/>
                         <outlet property="textViewBackground" destination="LWd-wi-999" id="YGQ-zc-t1N"/>
@@ -122,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mmc-5k-es5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="97" y="774"/>
+            <point key="canvasLocation" x="96.946564885496173" y="773.94366197183103"/>
         </scene>
         <!--Talk-->
         <scene sceneID="5Uf-KI-8Ei">
@@ -143,6 +156,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowtriangle.right" catalog="system" width="128" height="113"/>
         <image name="bubble.right" catalog="system" width="128" height="110"/>
         <image name="bubble.right.fill" catalog="system" width="128" height="110"/>
         <systemColor name="labelColor">

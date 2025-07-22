@@ -14,6 +14,7 @@ class ChattingViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var textView: UITextView!
     @IBOutlet var textViewBackground: UIView!
+    @IBOutlet var sendButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +23,22 @@ class ChattingViewController: UIViewController {
         
         view.border()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        scrollToBottom()
+    }
 }
 
 // MARK: TextView
 extension ChattingViewController {
     func configureTextView() {
         textViewBackground.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor).isActive = true
+        sendButton.addTarget(self, action: #selector(sendButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc func sendButtonTapped(_ sender: UIButton) {
+        
     }
 }
 
@@ -64,5 +75,10 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
             
             return cell
         }
+    }
+    
+    func scrollToBottom() {
+        guard let chatList else { return }
+        tableView.scrollToRow(at: IndexPath(row: chatList.count - 1, section: 0), at: .bottom, animated: false)
     }
 }
