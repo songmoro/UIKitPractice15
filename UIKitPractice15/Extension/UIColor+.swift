@@ -28,4 +28,8 @@ extension UIColor {
         .systemTeal,
         .systemYellow
     ]
+    
+    static var randomSystemColor: UIColor {
+        systems.randomElement()!
+    }
 }
