@@ -12,13 +12,26 @@ class ChattingViewController: UIViewController {
     var chatList: [Chat]?
 
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var textView: UITextView!
+    @IBOutlet var textViewBackground: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTextView()
         configureTableView()
+        
+        view.border()
     }
 }
 
+// MARK: TextView
+extension ChattingViewController {
+    func configureTextView() {
+        textViewBackground.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor).isActive = true
+    }
+}
+
+// MARK: TableView
 extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
     func configureTableView() {
         tableView.delegate = self
