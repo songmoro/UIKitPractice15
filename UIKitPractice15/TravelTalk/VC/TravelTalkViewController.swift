@@ -37,15 +37,17 @@ extension TravelTalkViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FriendCell.identifier, for: indexPath)
-        let chat = list[indexPath.row]
         
-        // TODO: move to cell
-        (cell as? FriendCell)?.friendImage.image = UIImage(imageNamed: chat.chatroomImage)
-        (cell as? FriendCell)?.nameLabel.text = chat.chatroomName
-        
-        if let last = chat.chatList.last {
-            (cell as? FriendCell)?.lastTalkLabel.text = last.message
-            (cell as? FriendCell)?.dateLabel.text = last.dotDate
+        if let cell = cell as? FriendCell {
+            let chat = list[indexPath.row]
+            
+            cell.friendImage.image = UIImage(imageNamed: chat.chatroomImage)
+            cell.nameLabel.text = chat.chatroomName
+            
+            if let last = chat.chatList.last {
+                cell.lastTalkLabel.text = last.message
+                cell.dateLabel.text = last.dotDate
+            }
         }
         
         return cell

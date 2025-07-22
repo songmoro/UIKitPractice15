@@ -52,10 +52,13 @@ extension UpDownCollectionViewController: UICollectionViewDelegate, UICollection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UpDownCell.identifier, for: indexPath)
-        let itemNumber = items[indexPath.item]
         
-        (cell as? UpDownCell)?.numberLabel.text = "\(itemNumber)"
-        (cell as? UpDownCell)?.configureView()
+        if let cell = cell as? UpDownCell {
+            let itemNumber = items[indexPath.item]
+            
+            cell.numberLabel.text = "\(itemNumber)"
+            cell.configureView()
+        }
         
         return cell
     }
