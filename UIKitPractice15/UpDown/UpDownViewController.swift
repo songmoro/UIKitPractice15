@@ -22,7 +22,7 @@ class UpDownViewController: UIViewController {
         super.viewDidLoad()
         print(#function, #fileID)
         
-//        view.border()
+        view.border()
         
         configureView()
         configureContainerView()
@@ -68,8 +68,9 @@ extension UpDownViewController {
         
         switch game.state {
         case .ready:
-            game.state.next()
-            contentVC?.prepareInprogress()
+            if contentVC?.prepareInprogress() == .some(true) {                
+                game.state.next()
+            }
         case .inprogress:
             guard let contentVC else { return }
             let result = contentVC.compareSelectedNumber()
