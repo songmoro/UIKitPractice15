@@ -47,15 +47,16 @@ extension TravelTalkViewController: UICollectionViewDelegate, UICollectionViewDa
             (cell as? FriendCell)?.lastTalkLabel.text = last.message
             (cell as? FriendCell)?.dateLabel.text = last.dotDate
         }
-//        print(#function, (cell as? FriendCell)?.friendImage.bounds)
+        
         return cell
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) else { return }
         guard let vc = storyboard?.instantiateViewController(identifier: "ChattingViewController") as? ChattingViewController else { return }
         vc.chatList = list[indexPath.row].chatList
+        
         navigationController?.pushViewController(vc, animated: true)
-//        print(#function, (cell as? FriendCell)?.friendImage.bounds)
     }
 }
