@@ -13,77 +13,64 @@ class UpDownContentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(#function, #fileID)
-        
-        addReadyView()
+        prepareReady()
     }
 }
 
 // MARK: state
 extension UpDownContentViewController {
-    func prepareInprogress() -> Bool {
-        guard let text = readyViewController.limitNumberTextField.text, let number = Int(text), number >= 1 else { return false }
-        let range = Array(1...number)
-        
-        removeReadyView()
-        addCollectionView()
-        
-        collectionViewController.items = range
-        collectionViewController.answer = range.randomElement()!
-        
-        return true
+    func textFieldInput() -> String {
+        return readyViewController.limitNumberTextField.text!
     }
     
-    func prepareEnd() {
-        removeCollectionView()
-    }
-    
-    func prepareReady() {
-        addReadyView()
-    }
-}
-
-// MARK: inprogress
-extension UpDownContentViewController {
-    func compareSelectedNumber() -> UpDownGame.UpDownState.CompareState {
-        return collectionViewController.compareNumber()
-    }
-}
-
-// MARK: prepare
-extension UpDownContentViewController {
-    // TODO: 중복 감소
-    private func addReadyView() {
-        guard let vc = Bundle.main.loadNibNamed("UpDownReadyViewController", owner: nil)?.first as? UpDownReadyViewController else { return }
+    func prepareInprogress(_ items: Int) {
+        remove(readyViewController)
         
-        addChild(vc)
-        vc.view.frame = view.bounds
-        view.addSubview(vc.view)
-        vc.didMove(toParent: self)
-        
-        self.readyViewController = vc
-    }
-    
-    private func addCollectionView() {
         guard let vc = Bundle.main.loadNibNamed("UpDownCollectionViewController", owner: nil)?.first as? UpDownCollectionViewController else { return }
         
-        addChild(vc)
-        vc.view.frame = view.bounds
-        view.addSubview(vc.view)
-        vc.didMove(toParent: self)
+        vc.items = Array(1...items)
+        add(vc)
         
         self.collectionViewController = vc
     }
     
-    private func removeReadyView() {
-        readyViewController.willMove(toParent: nil)
-        readyViewController.view.removeFromSuperview()
-        readyViewController.removeFromParent()
+    func prepareEnd() {
+        remove(collectionViewController)
     }
     
-    private func removeCollectionView() {
-        collectionViewController.willMove(toParent: nil)
-        collectionViewController.view.removeFromSuperview()
-        collectionViewController.removeFromParent()
+    func prepareReady() {
+        guard let vc = Bundle.main.loadNibNamed("UpDownReadyViewController", owner: nil)?.first as? UpDownReadyViewController else { return }
+        
+        add(vc)
+        
+        self.readyViewController = vc
+    }
+    
+    func selectedNumber() -> Int? {
+        return collectionViewController.selectedNumber()
+    }
+    
+    func removeFirstToNumber(_ number: Int) {
+        collectionViewController.removeFirstToNumber(number)
+    }
+    
+    func removeNumberToLast(_ number: Int) {
+        collectionViewController.removeNumberToLast(number)
+    }
+}
+
+// MARK: VC
+extension UpDownContentViewController {
+    private func remove(_ vc: UIViewController) {
+        vc.willMove(toParent: nil)
+        vc.view.removeFromSuperview()
+        vc.removeFromParent()
+    }
+    
+    private func add(_ vc: UIViewController) {
+        addChild(vc)
+        vc.view.frame = view.bounds
+        view.addSubview(vc.view)
+        vc.didMove(toParent: self)
     }
 }

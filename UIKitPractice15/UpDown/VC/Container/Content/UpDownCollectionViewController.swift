@@ -11,16 +11,16 @@ class UpDownCollectionViewController: UIViewController, UICollectionViewDelegate
     @IBOutlet var collectionView: UICollectionView!
 
     var items: [Int] = []
-    var answer: Int = 0
     var selected: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(#function, #fileID)
-        
         configureCollectionView()
     }
-    
+}
+
+// MARK: CollectionView
+extension UpDownCollectionViewController {
     private func configureCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -45,10 +45,7 @@ class UpDownCollectionViewController: UIViewController, UICollectionViewDelegate
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.collectionViewLayout = layout
     }
-}
-
-// MARK: CollectionView
-extension UpDownCollectionViewController {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         items.count
     }
@@ -56,6 +53,7 @@ extension UpDownCollectionViewController {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UpDownCell", for: indexPath)
         let itemNumber = items[indexPath.item]
+        
         (cell as? UpDownCell)?.numberLabel.text = "\(itemNumber)"
         (cell as? UpDownCell)?.configureView()
         
@@ -63,8 +61,6 @@ extension UpDownCollectionViewController {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(#function, indexPath)
-        
         if let selected {
             collectionView.cellForItem(at: selected)?.isSelected = false
         }
@@ -76,29 +72,20 @@ extension UpDownCollectionViewController {
 
 // MARK: inprogress
 extension UpDownCollectionViewController {
-    func compareNumber() -> UpDownGame.UpDownState.CompareState {
-        guard let selected else { return .none }
+    func selectedNumber() -> Int? {
+        guard let selected else { return nil }
         self.selected = nil
         
-        let number = items[selected.item]
-        let result: UpDownGame.UpDownState.CompareState
-        
-        print(answer)
-        
-        if answer == number {
-            result = .answer
-        }
-        else if answer > number {
-            result = .up
-            items.removeAll { (...number) ~= $0 }
-        }
-        else {
-            result = .down
-            items.removeAll { (number...) ~= $0 }
-        }
-        
+        return items[selected.item]
+    }
+    
+    func removeFirstToNumber(_ number: Int) {
+        items.removeAll { (...number) ~= $0 }
         collectionView.reloadData()
-        
-        return result
+    }
+    
+    func removeNumberToLast(_ number: Int) {
+        items.removeAll { (number...) ~= $0 }
+        collectionView.reloadData()
     }
 }

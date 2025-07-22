@@ -20,7 +20,6 @@ class UpDownViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(#function, #fileID)
         
         view.border()
         
@@ -64,25 +63,28 @@ extension UpDownViewController {
     }
     
     @objc private func bottomContainerButtonTapped(_ sender: UIButton) {
-        print(#function)
-        
         switch game.state {
         case .ready:
-            if contentVC?.prepareInprogress() == .some(true) {                
-                game.state.next()
-            }
+            guard let input = contentVC?.textFieldInput() else { return }
+            guard game.startIfAvailable(mayBeNumber: input) else { return }
+            guard let items = game.returnItemsIfAvailable() else { return }
+            
+            contentVC?.prepareInprogress(items)
         case .inprogress:
             guard let contentVC else { return }
-            let result = contentVC.compareSelectedNumber()
+            guard let number = contentVC.selectedNumber() else { return }
             
-            switch result {
-            case .answer:
-                game.state.next()
+            if game.isCorrect(number: number)  {
                 contentVC.prepareEnd()
-            case .up, .down:
-                game.count += 1
-                game.state.update(from: result)
-            case .none:
+                return
+            }
+            
+            switch game.whyIsntItCorrect(number: number) {
+            case .up:
+                contentVC.removeFirstToNumber(number)
+            case .down:
+                contentVC.removeNumberToLast(number)
+            default:
                 break
             }
         case .end:
