@@ -36,9 +36,6 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
         guard let chat = chatList?[indexPath.row] else { return UITableViewCell() }
         if chat.user.name == "김새싹" {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MeChatCell", for: indexPath)
-            
-//            (cell as? MeChatCell)?.profileImage.image = UIImage(named: "TravelTalk/\(chat.user.image)")
-//            (cell as? MeChatCell)?.nameLabel.text = chat.user.name
             (cell as? MeChatCell)?.chatLabel.text = chat.message
             (cell as? MeChatCell)?.timeLabel.text = chat.timeDate
             
@@ -47,7 +44,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource {
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "YouChatCell", for: indexPath)
             
-            (cell as? YouChatCell)?.profileImage.image = UIImage(named: "TravelTalk/\(chat.user.image)")
+            (cell as? YouChatCell)?.profileImage.image = UIImage(imageNamed: chat.user.image)
             (cell as? YouChatCell)?.nameLabel.text = chat.user.name
             (cell as? YouChatCell)?.chatLabel.text = chat.message
             (cell as? YouChatCell)?.timeLabel.text = chat.timeDate

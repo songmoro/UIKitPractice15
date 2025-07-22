@@ -40,7 +40,7 @@ extension TravelTalkViewController: UICollectionViewDelegate, UICollectionViewDa
         let chat = list[indexPath.row]
         
         // TODO: move to cell
-        (cell as? FriendCell)?.friendImage.image = UIImage(named: "TravelTalk/\(chat.chatroomImage)")
+        (cell as? FriendCell)?.friendImage.image = UIImage(imageNamed: chat.chatroomImage)
         (cell as? FriendCell)?.nameLabel.text = chat.chatroomName
         
         if let last = chat.chatList.last {
